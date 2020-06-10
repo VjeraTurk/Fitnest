@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     public function index(){
-        $title = "Welcome To Fitnest";
+        $title = "Fitnest";
         //return view('pages.index', compact('title'));
         return view('pages.index')->with('title', $title);
     }
@@ -18,7 +18,12 @@ class PagesController extends Controller
     }
 
     public function fitnest(){
-        $title = "Your Fitnest";  
-        return view('pages.fitnest')->with('title',$title);
+        #$title = "Your Fitnest";
+        $data =  array(
+            'title' => 'Your Fitnest'
+        );
+        #return view('pages.fitnest')->with('title',$title);
+        return view('pages.fitnest')->with($data);
+    
     }
 }

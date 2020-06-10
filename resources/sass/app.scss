@@ -1,8 +1,13 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('http://fonts.googleapis.com/css?family=Tangerine|Poiret+One|Amatic+SC');
 
 // Variables
 @import 'variables';
 
-// Bootstrap
+// Custom CSS
+@import 'custom';
+
+// Bootstrap  to moze biti import from node_modules/bootrap-sass/assets/stylesheets/bootstrap
 @import '~bootstrap/scss/bootstrap';
+
