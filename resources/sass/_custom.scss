@@ -1,5 +1,15 @@
 // new sljivi:
 body{    
-    $background-image: url("public/images/1.jpg");
-    $background: red !important;
+    //background-color: red !important;
+    background-image:  url('public/images/1.jpg')  !important;
+    //top left fixed no-repeat
+    background-position:
+    top left,
+    fixed,
+    no-repeat;
+    font-size: x-large;
+}
+
+.jumbotron{
+    background:  rgba($color: #979797, $alpha: 0.2);
 }
