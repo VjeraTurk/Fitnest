@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index','show']]);
+    }
     // php artisan make:controller PostController --resource
     /**
      * Display a listing of the resource.
@@ -17,10 +23,7 @@ class PostController extends Controller
         //$posts =  Post::all();
         //$post = DB::selevt('SELECT * FROM posts');
         // $post = Post::where('title','Post Two')->get();
-
-        
         //$posts =  Post::orderBy('title','desc')->take(1)->get();
-
         //$posts =  Post::orderBy('title','desc')->get();
 
         //Pagination
@@ -36,7 +39,6 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
         return view('posts.create');
     }
 
@@ -85,6 +87,10 @@ class PostController extends Controller
     public function edit($id)
     {
         $post =  Post::find($id); //eloquent
+        // Check for correct user
+        if(auth()->user()->id !== $post->user_id){
+           return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
         return view('posts.edit')->with('post', $post);
     }
 
@@ -121,6 +127,11 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        // Check for correct user
+        if(auth()->user()->id !== $post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+         }
+
         $post->delete();
         return redirect('/posts')->with('success', 'Post Removed');
     }
