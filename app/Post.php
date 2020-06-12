@@ -13,5 +13,10 @@ class Post extends Model // we don't have to do much, a ton of functionallty is 
     public $primaryKey = 'id';
     // Timestamps
     public $timestamps = true;
+
+    //Relationship - post belongs to a user
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
     
 }
