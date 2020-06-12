@@ -15,6 +15,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="/posts">Blog</a>
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/posts/create">Create Post</a></li>
+      </ul>
 <!--        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
