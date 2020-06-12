@@ -1,23 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel ="stylesheet" href = "{{asset('css/app.css')}}"> ovo je nesto sto ima u verziji 5-->
-        <link rel ="stylesheet" href = "{{asset('css/app.css')}}">
-        <title>{{config('app.name'),'Fitnest'}}</title>
-        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
-        <!-- <link href="http://fonts.googleapis.com/css?family=Tangerine|Poiret+One|Amatic+SC" rel="stylesheet" type="text/css" >-->     
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- ckeditor ne radi -->
+    <script src="../ckeditor.js"> 
+        CKEDITOR.replace('article-ckeditor');
+    </script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
         @include('inc.navbar')
-        <div class="container">
-            @include('inc.messages')
-            @yield('content')
-        </div>
-        <!-- ckeditor ne radi -->
-        <script src="../ckeditor.js"> 
-            CKEDITOR.replace('article-ckeditor');
-        </script>
-    </body>
+        <div class = 'container'>
+            <main class="py-4">
+                    @include('inc.messages')
+                    @yield('content')
+            </main>
+    </div>
+    </div>
+
+</body>
 </html>
