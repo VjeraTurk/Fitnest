@@ -10935,11 +10935,12 @@ a.text-dark:focus {
 
 body {
   background-image: url(/images/1.jpg?1e4c204ac96a306df82eafdf39ba5bf6) !important;
-  background-position: top left, fixed, no-repeat;
-  font-size: x-large;
+  background-position: top left, fixed;
+  background-repeat: no-repeat;
+  font-size: large;
 }
 
 .jumbotron {
-  background: rgba(151, 151, 151, 0.2);
+  background: rgba(151, 151, 151, 0.4);
 }
 

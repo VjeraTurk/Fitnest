@@ -5,11 +5,11 @@ body{
     //top left fixed no-repeat
     background-position:
     top left,
-    fixed,
-    no-repeat;
-    font-size: x-large;
+    fixed;
+    background-repeat: no-repeat;
+    font-size: large;
 }
 
 .jumbotron{
-    background:  rgba($color: #979797, $alpha: 0.2);
+    background:  rgba($color: #979797, $alpha: 0.4);
 }
